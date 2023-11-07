@@ -1,15 +1,15 @@
 # Introduction
 
-Our program consists of two main parts, including conversion of non deterministic finite automaton (NFA) to deterministic finite automaton (DFA) and also reduction for minimizing the given input as much as possible.
+Our program consists of two main parts, including the conversion of Nondeterministic Finite Automaton (NFA) to deterministic finite automaton (DFA) and also Reduction for minimizing the given input as much as possible.
 
 
 # NFA TO DFA algorithms
 
-NFA to DFA algorithm contains three major functions. The first function(access lambda)،finds all possible transitions using epsilon transition .The second function(lambdaremove)، removes epsilon transitions by merging the related states. The last function(repeatedremove)makes a new transition table using the old values and that table is considered as the final output of the program which will be shown for the user after turning into a json format.
+The NFA to DFA algorithm contains three major functions. The first function(access lambda)،finds all possible transitions using epsilon transition. The second function(lambdaremove)، removes epsilon transitions by merging the related states. The last function(repeatedremove)makes a new transition table using the old values. That table is considered the final output of the program, which will be shown to the user after turning into a JSON format.
 
 # Reduction algorithms
 
-Reduction Algorithm has two separated sections. The first section is for removing inaccessible states using function (RemoveInaccessibleStates) and the second part is for finding equal states. This part contains three major function. The first function, (createTransitionTable) is responsible for creating transition table. The second function, (findEqualStates) is responsible for finding equal states from transition table and removing equal, repeated states. The last function, (standardTransitionTable) is responsible for building a new machine with survived states. The final output is converted to Json format and ready to be sent to Front.
+The reduction Algorithm has two separate sections. The first section is for removing inaccessible states using a function (RemoveInaccessibleStates), and the second is for finding equal states. This part contains three major functions. The first function, (createTransitionTable), is responsible for creating a transition table. The second function, (findEqualStates) is responsible for finding equal states from the transition table and removing equal, repeated states. The last function (standardTransitionTable) is responsible for building a new machine with survived states. The final output is converted to JSON format and ready to be sent to Front.
 
 
 # Screenshots
@@ -29,7 +29,7 @@ Reduction Algorithm has two separated sections. The first section is for removin
 
 ## Input example
 
-First index of our json is states name and in each states we set their connection and state status. for example in state "q0" we have just one connection with "q1" by "a" and other connection like "b" , "λ" , "c" are null but we shouldn't remove them from our input json and the last value "state" show the status of our state and only get "start" , "final" , "normal" value.
+The first index of our json is the states name, and in each states, we set their connection and state status. For example, in state "q0" we have just one connection with "q1" by "a" and other connections like "b", "λ", and "c" are null, but we shouldn't remove them from our input json and the last value "state" show the status of our state and only get "start", "final", "normal" value.
 ```javascript
 {
    "q0":{
@@ -129,26 +129,26 @@ In output we only have one extra states status and its "TRAP" like state "2" and
 ```
 ## Errors
 
-If send empty json we will see this errors:
+If send empty JSON we will see these errors:
 ```javascript
 {"status": null}
 ```
-If send DFA machine we will see this errors because the DFA machine didnt need to change DFA and the input machine should be NFA:
+If send the DFA machine we will see these errors because the DFA machine didn't need to change DFA and the input machine should be NFA:
 ```javascript
 {"is_dfa": True}
 ```
 ## Reduction
 `localhost:8000/reduction/{json_format}`
 
-All of the inputs and outputs in reduction are like nfa to dfa Api.
+All of the inputs and outputs in reduction are like NFA to DFA Api.
 
 ## Errors
 
-If send empty json we will see this errors:
+If send empty JSON we will see these errors:
 ```javascript
 {"status": null}
 ```
-If send NFA machine we will see this error because reduction algorithm just get DFA machine:
+If send the NFA machine we will see this error because the reduction algorithm just gets DFA machine:
 ```javascript
 {"is_nfa": True}
 ```
@@ -160,21 +160,21 @@ If send NFA machine we will see this error because reduction algorithm just get 
 
 - Click on a Connection to delete or rename it.
 
-- Double click on black movable button to see Clear , NTD , Red and help button.
+- Double-click on the black movable button to see the Clear, NTD, Red, and Help button.
 
-- Right click to white page to see menu of button.
+- Right-click on the white page to see a menu of buttons.
 
 - Click on a 'Nfa 2 Dfa' button to convert from Nfa to Dfa and Show it.
 
 - Click on a 'Reduction' button to process a Reduction algorithm.
 
-- RightClick on a State to delete, rename, Start or Final it.
+- RightClick on a State to delete, rename, Start, or Finalize it.
 
-- Double click on whitespace to add a new State.
+- Double-click on whitespace to add a new State.
 
 # How to run
 
-For running this project followe below steps:
+To run this project follow below steps:
 
 1. Install `python3`, `pip` in your system.
 2. Clone this repository `https://github.com/mohamadkhalaj/statemachine-app.git`.
@@ -185,12 +185,12 @@ For running this project followe below steps:
   python manage.py collectstatic 
   python manage.py runserver
   ```
-4. Open following address `http://localhost:8000/` in your browser.
+4. Open the following address `http://localhost:8000/` in your browser.
 5. enjoy :)
 
 # Team members
-- [Mohammadmahdi Khalaj](https://github.com/mohamadkhalaj) FrontEnd
-- [Mohammad Noroozi](https://github.com/norouzy/) FrontEnd
-- [Amirhossein Bayati](https://github.com/amirhossein-bayati) BackEnd
-- [Ali Hassanzadeh](https://github.com/AliHasanzadeh80) NFA 2 DFA Algorithm
-- [Amirhossein Moosavi](https://github.com/AmirH-Moosavi) Reduction Algorithm
+- [Amirhossein Moosavi](https://github.com/AmirH-Moosavi)
+- [Ali Hassanzadeh](https://github.com/AliHasanzadeh80)
+- [Mohammadmahdi Khalaj](https://github.com/mohamadkhalaj)
+- [Mohammad Noroozi](https://github.com/norouzy/)
+- [Amirhossein Bayati](https://github.com/amirhossein-bayati)
